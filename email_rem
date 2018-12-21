@@ -2,7 +2,7 @@
 
 """
 	E-Minder 
-	Setting yourself email-based reminders via the command line
+	Command line tool to set yourself email-based reminders.
 """
 
 import sys, datetime
@@ -12,7 +12,7 @@ storage_file = "/home/johannes/code/eminder/set_reminders.txt"
 
 # getting and saving user input for a new reminder
 if len(sys.argv) == 1:
-	# get user inpout dependent on which Python version is being used
+	# get user input dependent on which Python version is being used
 	if sys.version_info[0] == 3:
 		reminder = input("Reminder: \n")
 		date = input("Date (19.01.19): \n")
@@ -20,6 +20,7 @@ if len(sys.argv) == 1:
 		reminder = raw_input("Reminder: \n")
 		date = raw_input("Date (e.g. 19.01.19): \n")
 
+	# write to storage file, create storage file if first run
 	with open(storage_file, "a") as file:
 		line = reminder + "%%%" + date
 		file.write(line + "\n")
