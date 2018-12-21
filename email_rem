@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+
+"""
+	E-Minder 
+	Setting yourself email-based reminders via the command line
+"""
+
+import sys, datetime
+from utils import send_reminder, get_date
+
+storage_file = "/home/johannes/code/eminder/set_reminders.txt"
+
+# getting and saving user input for a new reminder
+if len(sys.argv) == 1:
+	# get user inpout dependent on which Python version is being used
+	if sys.version_info[0] == 3:
+		reminder = input("Reminder: \n")
+		date = input("Date (19.01.19): \n")
+	else:
+		reminder = raw_input("Reminder: \n")
+		date = raw_input("Date (e.g. 19.01.19): \n")
+
+	with open(storage_file, "a") as file:
+		line = reminder + "%%%" + date
+		file.write(line + "\n")
+
+
+# sending out those reminders that are due today
+if len(sys.argv) > 1 and sys.argv[1] == "send_todays":
+	not_sent_yet = []
+	with open(storage_file, "r") as file:
+		for line in file:
+			reminder = line.split("%%%")
+			reminder_msg = reminder[0]
+			reminder_date = reminder[1].replace("\n", "")
+
+			todays_date = get_date()
+
+			if reminder_date == todays_date:
+				send_reminder(reminder_msg)
+				# print("sent.")
+			else:
+				not_sent_yet.append(line)
+				# print("not sent.")
+
+	# writing back to storage those reminders that are yet to be sent
+	with open(storage_file, "w") as file:
+		for each in not_sent_yet:
+			file.write(each)
+
