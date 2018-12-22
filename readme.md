@@ -1,18 +1,5 @@
-This is a script that I use to set myself reminders on the command line.
-Each reminder will be delivered to my Email Inbox on the day I specifiy.
-If you'd like to use it, you can follow the steps below to do so.
+This is a small application I use to set myself reminders on the command line.
+Each reminder will then be delivered to my Gmail Inbox via Email on a specified day.
 
-#### Use
-- download the script:
-`git clone https://github.com/JohannesSeikowsky/Eminder.git`
-- move its directory to a location of your choice that's included in your $PATH
-- make scripts executable
-`chmod +x email_rem`
-`chmod +x utils.py`
-- Now you should be able to run on the command line:
-`email_rem`
-- Now everytime you run this it will ask you for the content and the date of a new reminder
-
-
-
-
+If you'd like to use it, you can do so by downloading it and making a few adjustment.
+Drop me a quick email and I'll provide some guidance - joseikowsky@gmail.com
