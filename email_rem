@@ -49,3 +49,10 @@ if len(sys.argv) > 1 and sys.argv[1] == "send_todays":
 		for each in not_sent_yet:
 			file.write(each)
 
+
+
+# nxt
+# write the simplest possible documentation
+# goal -- so that someone else would theoretically be able to use it
+# --> explain what and how ... clearly and as concisely as possible
+# --> the simplest possible documentation ...
