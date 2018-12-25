@@ -1,2 +1,3 @@
-set_reminders.txt
 *.pyc
+*.Log
+set_reminders.txt
