@@ -56,5 +56,3 @@ def check_py_version(no):
 		return True
 	else:
 		return False
-
-

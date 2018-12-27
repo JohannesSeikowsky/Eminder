@@ -14,8 +14,8 @@ class TestClass(unittest.TestCase):
 		for each in parts_of_date:
 			self.assertTrue(each.isdigit() and len(each) == 2)
 
-		# to be added -
-		# test for save_reminder and send_todays_reminders
+		# tests to be added in time:
+		# test for save_reminder & test for send_todays_reminders
 
 if __name__ == "__main__":
 	unittest.main(exit=False)
